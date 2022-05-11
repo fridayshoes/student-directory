@@ -1,4 +1,4 @@
-# Method for student input
+# methsd for student input
 def input_students
   puts "Please enter the names of students"
   puts "To finish, just hit return twice"
@@ -9,7 +9,7 @@ def input_students
   # while the name is NOT empty, repeat this code
   while !name.empty? do
     # add the student hash to the array
-    students << {name: name, cohort: :novmeber}
+    students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
@@ -27,7 +27,10 @@ end
 # Print list of students
 def print(students)
   students.each_with_index do |student, index|
-    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    # filter names that begin with a, less that 12 characters
+    if student[:name].start_with?("a") && student[:name].length < 12
+      puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    end  
   end
 end
 
