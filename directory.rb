@@ -1,4 +1,4 @@
-# Method for student input
+# Method for student input - Step 7 requirements added, no typo solution 
 def input_students
   puts "Please enter the names of students"
   puts "To finish, just hit return twice"
@@ -6,23 +6,59 @@ def input_students
   students = []
   # get the first name
   name = gets.chomp
+  puts "Please enter cohort"
+  month = gets.chomp
+    # Default if no month input
+    if month.empty?
+      month = "-no-cohort-"
+    end
   # while the name is NOT empty, repeat this code
   while !name.empty? do
     # add the student hash to the array
-    students << {name: name, cohort: :november, hobbies: :knitting, country_of_birth: :england, height: :tall}
+    students << {name: name, cohort: month.to_sym, hobbies: :knitting, country_of_birth: :england, height: :tall}
     puts "Now we have #{students.count} students"
     # get another name from the user
+    puts "Please enter the names of students"
     name = gets.chomp
+    puts "Please enter cohort"
+    month = gets.chomp
+      # Default if no month input
+      if month.empty?
+        month = "-no-cohort-"
+      end
   end
   # return the array for students
   students
 end
+
+
+# Method for student input - Original
+#def input_students
+#  puts "Please enter the names of students"
+#  puts "To finish, just hit return twice"
+  # create an empty array
+#  students = []
+  # get the first name
+#  name = gets.chomp
+  # while the name is NOT empty, repeat this code
+#  while !name.empty? do
+    # add the student hash to the array
+#    students << {name: name, cohort: :november, hobbies: :knitting, country_of_birth: :england, height: :tall}
+#    puts "Now we have #{students.count} students"
+    # get another name from the user
+#    name = gets.chomp
+#  end
+  # return the array for students
+#  students
+#end
 
 # Print the header
 def print_header
   puts "The students of Villains Academy".center(60, '---')
   puts "-------------".center(60, '---')
 end
+
+
 
   
 # Print list of student - Using while
