@@ -20,9 +20,10 @@ end
 
 # Print the header
 def print_header
-  puts "The students of Villains Academy"
-  puts "-------------"
+  puts "The students of Villains Academy".center(60, '---')
+  puts "-------------".center(60, '---')
 end
+
   
 # Print list of student - Using while
 #def print(students)
@@ -33,13 +34,15 @@ end
 #  end
 #end
 
+
+
 # Print list of student - Using while and filter
 def print(students)
   index = 0
   while index < students.length do
     # filter names that begin with a, less that 12 characters
     if students[index][:name].start_with?("a") && students[index][:name].length < 12
-      puts "#{index + 1}. #{students[index][:name]} #{students[index][:cohort]} cohort"
+      puts "#{index + 1}. #{students[index][:name]} #{students[index][:cohort]} cohort #{students[index][:hobbies]} #{students[index][:country_of_birth]} #{students[index][:height]}".center(60, '---') # center string
     end
     index +=1
   end
@@ -49,7 +52,7 @@ end
     
 # Print the footer
 def print_footer(names)
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students".center(60, '---')
 end
 
 # Nothing happens until we call the methods
@@ -65,12 +68,26 @@ print_footer(students)
 
 # OLD CODE
 
+# Print list of student - Using while and filter
+#def print(students)
+#  index = 0
+#  while index < students.length do
+    # filter names that begin with a, less that 12 characters
+#    if students[index][:name].start_with?("a") && students[index][:name].length < 12
+#      puts "#{index + 1}. #{students[index][:name]} #{students[index][:cohort]} cohort #{students[index][:hobbies]} #{students[index][:country_of_birth]} #{students[index][:height]}".length
+#    end
+#    index +=1
+#  end
+#end
+
+
 # Print list of students - Using .each
 #def print(students)
 #  students.each_with_index do |student, index|
 #    puts "#{index + 1}. #{student[:name]} #{student[:cohort]} cohort"
 #  end  
 # end
+
 
 # Print list of students - Using .each and filter
 #def print(students)
@@ -80,8 +97,7 @@ print_footer(students)
 #      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
 #    end  
 #  end
-#end  
-
+#end 
 
 
 # Filter names by first letter
@@ -100,4 +116,4 @@ print_footer(students)
 #      puts "F2 #{student[:name]}"
 #    end
 #  end
-#end)
+#end
